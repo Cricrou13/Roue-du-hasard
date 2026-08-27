@@ -39,3 +39,24 @@ export function getLabelPosition(index, totalSlices, radius, centerX, centerY) {
 
   return { x, y, rotation: middleAngle };
 }
+
+// Calcule la rotation finale à appliquer pour que la roue s'arrête sur l'option gagnante
+export function getSpinRotation(winningIndex, totalSlices, currentRotation) {
+  const anglePerSlice = 360 / totalSlices;
+  const middleAngle = winningIndex * anglePerSlice + anglePerSlice / 2;
+
+  // Angle (mod 360) nécessaire pour que le milieu de la part gagnante arrive en haut (0°)
+  const targetMod = (360 - middleAngle) % 360;
+
+  // Position actuelle de la roue (mod 360)
+  const currentMod = currentRotation % 360;
+
+  // Distance à parcourir pour aller de la position actuelle à la position cible (toujours en avançant)
+  let delta = targetMod - currentMod;
+  if (delta < 0) delta += 360;
+
+  // On ajoute plusieurs tours complets pour un effet visuel de rotation rapide
+  const extraTurns = 5 * 360;
+
+  return currentRotation + extraTurns + delta;
+}
