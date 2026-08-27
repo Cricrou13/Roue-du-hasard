@@ -1,16 +1,54 @@
-# React + Vite
+🎡 Roue du Hasard
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Une petite application web pour prendre des décisions de façon ludique : ajoutez vos options, faites tourner la roue, et laissez le hasard choisir pour vous !
 
-Currently, two official plugins are available:
+🔗 Démo en ligne : roue-du-hasard.vercel.app
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+✨ Fonctionnalités
+Ajout et suppression d'options à la volée
+Roue dessinée en SVG, avec une couleur distincte par option
+Animation de rotation fluide et tirage aléatoire équitable
+Affichage clair du résultat gagnant
+🛠️ Stack technique
+React (Vite) — pour l'interface et la gestion d'état
+SVG — pour le dessin de la roue et de ses parts
+CSS — pour l'animation de rotation et le style général
+🚀 Installation et lancement en local
 
-## React Compiler
+Cloner le dépôt :
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+bash
+git clone https://github.com/Cricrou13/Roue-du-hasard.git
+cd Roue-du-hasard
 
-## Expanding the Oxlint configuration
+Installer les dépendances :
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+bash
+npm install
+
+Lancer le serveur de développement :
+
+bash
+npm run dev
+
+L'application sera accessible sur http://localhost:5173.
+
+📁 Structure du projet
+src/
+├── components/
+│   ├── Wheel.jsx          → la roue (SVG + rotation)
+│   ├── Wheel.css          → styles de la roue et du pointeur
+│   └── OptionsForm.jsx    → formulaire d'ajout/suppression d'options
+├── utils/
+│   └── wheelHelpers.js    → calculs (angles, couleurs, rotation, tirage)
+├── App.jsx
+├── main.jsx
+└── index.scss
+🔭 Améliorations à venir
+Sauvegarde des listes d'options (localStorage)
+Historique des tirages précédents
+Responsive mobile optimisé
+Son au tirage
+📄 Licence
+
+Projet personnel réalisé dans le cadre d'une formation développeur web.
